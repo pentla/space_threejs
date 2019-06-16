@@ -1,7 +1,8 @@
 import * as THREE from 'three'
 import { createEarth } from './components/Earth'
+import earthImage from './assets/earth.png'
 
-window.addEventListener('DOMContentLoaded', () =>{
+window.addEventListener('DOMContentLoaded', () => {
     const renderer = new THREE.WebGLRenderer()
     renderer.setSize(800, 600)
     document.body.appendChild(renderer.domElement)
@@ -13,7 +14,7 @@ window.addEventListener('DOMContentLoaded', () =>{
 
     const loader = new THREE.TextureLoader()
     let earth;
-    loader.load('/assets/earth.png', texture => {
+    loader.load(earthImage, texture => {
         earth = createEarth(texture)
         scene.add(earth)
     })
